@@ -7,6 +7,21 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/startQuizButton"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="82dp"
+        android:backgroundTint="#8A8A8A"
+        android:onClick="startQuiz"
+        android:text="@string/startQuizText"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameEditText"
+        app:strokeColor="#000000"
+        app:strokeWidth="2dp" />
+
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
@@ -50,15 +65,4 @@
         app:layout_constraintStart_toEndOf="@+id/enterNameTextView"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
-    <Button
-        android:id="@+id/startQuizButton"
-        android:layout_width="199dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="240dp"
-        android:onClick="startQuiz"
-        android:text="@string/startQuizText"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, QuestionActivity.class);   // New intent object
         intent.putExtra("username", username.getText().toString());        // Pass the value of username EditText
         startActivity(intent);                                                   // start QuestionActivity
+        finish();
     }
 
     @Override
