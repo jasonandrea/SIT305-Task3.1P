@@ -9,14 +9,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class EndActivity extends AppCompatActivity {
+    String username;
+
     // Method to close the app. Called on clicking finish button
     public void closeApp(View view) {
         finish();   // Close this activity
     }
 
-    // Method to retry the quiz. Called on clicking Try New Quiz button. Does not ask the user to enter a name again.
+    // Method to retry the quiz. Called on clicking Try New Quiz button. EditText will automatically be filled with user's name
     public void retryQuiz(View view) {
-        // TODO: call start QuestionActivity to start the quiz again
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("username", username);
+        startActivity(intent);
+        finish();
     }
 
     @Override
@@ -30,7 +35,7 @@ public class EndActivity extends AppCompatActivity {
         TextView userScore = findViewById(R.id.userScoreTextView);
         Intent intent = getIntent();
         String score = intent.getStringExtra("userScore");
-        String username = intent.getStringExtra("username");
+        username = intent.getStringExtra("username");
 
         congratsText.setText("Congratulations " + username + "!");
         userScore.setText(score);

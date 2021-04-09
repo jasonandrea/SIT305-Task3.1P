@@ -37,7 +37,7 @@
         android:layout_marginTop="23dp"
         android:max="5"
         android:progress="1"
-        android:progressTint="#4CAF50"
+        android:progressDrawable="@drawable/progress_bar_style"
         app:layout_constraintStart_toEndOf="@+id/questionProgressText"
         app:layout_constraintTop_toBottomOf="@+id/welcomeUserTextView" />
 
@@ -111,6 +111,7 @@
         android:layout_height="60dp"
         android:backgroundTint="#8A8A8A"
         android:onClick="submitAnswer"
+        android:text="@string/submitText"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

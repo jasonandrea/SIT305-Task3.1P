@@ -13,15 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuestionActivity extends AppCompatActivity {
-    // Constant for question amount
-    public static final int QUESTION_AMOUNT = 5;
     TextView qTitle, qDesc, welcomeUserText, questionNumber;
     Button answer1Button, answer2Button, answer3Button, submitNextButton;
     ProgressBar questionNumberBar;
-    Integer score, selectedAnswer;
-    String username;
-    String[] questionTitles, questionDescriptions;
-    String[][] answers;
+    Integer score, selectedAnswer;                      // Integer var. to store score and user's selected answer
+    String username;                                    // String var. to store user's name
+    String[] questionTitles, questionDescriptions;      // Array of question titles and descriptions
+    String[][] answers;                                 // 2D array of answers
 
     // Integers of correct answers. Values are 1-3
     int[] correctAnswer = {2, 3, 1, 1, 3};
@@ -38,7 +36,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     // Toggle the answer buttons between clickable and not clickable
     private void toggleAnswerClickable() {
-        if (answer1Button.isClickable()) {
+        if (answer1Button.isClickable()) {  // if answer1Button is clickable, that means all answer buttons are clickable
             answer1Button.setClickable(false);
             answer2Button.setClickable(false);
             answer3Button.setClickable(false);
@@ -74,7 +72,7 @@ public class QuestionActivity extends AppCompatActivity {
         answer1Button.setBackgroundColor(Color.LTGRAY);
         answer2Button.setBackgroundColor(Color.WHITE);
         answer3Button.setBackgroundColor(Color.WHITE);
-        selectedAnswer = 1;
+        selectedAnswer = 1; // 1 on selectedAnswer means user selected answer 1
     }
 
     // Method to highlight answer button 2 on click. Highlighted button becomes light gray
@@ -82,7 +80,7 @@ public class QuestionActivity extends AppCompatActivity {
         answer2Button.setBackgroundColor(Color.LTGRAY);
         answer1Button.setBackgroundColor(Color.WHITE);
         answer3Button.setBackgroundColor(Color.WHITE);
-        selectedAnswer = 2;
+        selectedAnswer = 2; // 2 on selectedAnswer means user selected answer 2
     }
 
     // Method to highlight answer button 3 on click. Highlighted button becomes light gray
@@ -90,7 +88,7 @@ public class QuestionActivity extends AppCompatActivity {
         answer3Button.setBackgroundColor(Color.LTGRAY);
         answer2Button.setBackgroundColor(Color.WHITE);
         answer1Button.setBackgroundColor(Color.WHITE);
-        selectedAnswer = 3;
+        selectedAnswer = 3; // 3 on selectedAnswer means user selected answer 3
     }
 
     // Method that will be called when clicking the submit/next button
@@ -143,10 +141,10 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-        Intent intent = getIntent();    // Get intent from previous activity
-        username = intent.getStringExtra("username");                                      // Get username from intent
-        score = 0;                                                                                      // User score, starts at 0
-        selectedAnswer = -1;                                                                            // Selected answer. -1 means no answer selected
+        Intent intent = getIntent();                                                           // Get intent from previous activity
+        username = intent.getStringExtra("username");                                    // Get username from intent
+        score = 0;                                                                             // User score, starts at 0
+        selectedAnswer = -1;                                                                   // Selected answer. -1 means no answer selected
         questionTitles = getResources().getStringArray(R.array.questionTitles);                // Get q titles
         questionDescriptions = getResources().getStringArray(R.array.questionDescriptions);    // Get q descriptions
         welcomeUserText = findViewById(R.id.welcomeUserTextView);
@@ -154,7 +152,7 @@ public class QuestionActivity extends AppCompatActivity {
         // Question progress number and bar
         questionNumber = findViewById(R.id.questionProgressText);
         questionNumberBar = (ProgressBar)findViewById(R.id.questionProgressBar);
-        questionNumber.setText("1/" + questionNumberBar.getMax());
+        questionNumber.setText(questionNumberBar.getProgress() + "/" + questionNumberBar.getMax());
 
         // Question title & description and buttons
         qTitle = findViewById(R.id.questionTitleText);
@@ -175,17 +173,13 @@ public class QuestionActivity extends AppCompatActivity {
 
         welcomeUserText.setText("Welcome " + username + "!");   // Welcome text
 
-        // After first question, remove the welcome user text
-        if (questionNumberBar.getProgress() != 1) welcomeUserText.setText("");
-
         // Change qTitle TextView and qDesc TextView
         qTitle.setText(questionTitles[questionNumberBar.getProgress() - 1]);
         qDesc.setText(questionDescriptions[questionNumberBar.getProgress() - 1]);
 
-        // Change all button texts
+        // Change all answer buttons text
         answer1Button.setText(answers[questionNumberBar.getProgress() - 1][0]);
         answer2Button.setText(answers[questionNumberBar.getProgress() - 1][1]);
         answer3Button.setText(answers[questionNumberBar.getProgress() - 1][2]);
-        submitNextButton.setText("Submit");
     }
 }

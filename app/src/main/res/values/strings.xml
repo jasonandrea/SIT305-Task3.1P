@@ -5,6 +5,7 @@
     <string name="startQuizText">START</string>
     <string name="welcomeText">Welcome</string>
     <string name="usernameHint">Name</string>
+    <string name="submitText">SUBMIT</string>
     <string name="scoreText">YOUR SCORE:</string>
     <string name="takeNewQuizText">Take New Quiz</string>
     <string name="finishText">Finish</string>
