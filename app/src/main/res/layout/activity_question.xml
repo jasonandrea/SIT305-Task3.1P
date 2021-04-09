@@ -43,20 +43,19 @@
 
     <TextView
         android:id="@+id/questionTitleText"
-        android:layout_width="wrap_content"
+        android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionProgressText" />
 
     <TextView
         android:id="@+id/questionDescText"
-        android:layout_width="360dp"
-        android:layout_height="124dp"
+        android:layout_width="325dp"
+        android:layout_height="126dp"
         android:layout_marginTop="20dp"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
