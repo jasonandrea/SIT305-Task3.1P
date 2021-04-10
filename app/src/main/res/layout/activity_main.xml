@@ -1,68 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/startQuizButton"
-        android:layout_width="220dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="82dp"
-        android:backgroundTint="#8A8A8A"
-        android:onClick="startQuiz"
-        android:text="@string/startQuizText"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameEditText"
-        app:strokeColor="#000000"
-        app:strokeWidth="2dp" />
 
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="170dp"
         android:text="@string/appTitleText"
         android:textColor="#000000"
         android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/enterNameTextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="135dp"
-        android:text="@string/enterNameText"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
 
-    <EditText
-        android:id="@+id/usernameEditText"
-        android:layout_width="167dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="22dp"
-        android:backgroundTint="#03A9F4"
-        android:ems="10"
-        android:hint="@string/usernameHint"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColor="#000000"
-        android:textColorHint="#8F8F8F"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
-        app:layout_constraintStart_toEndOf="@+id/enterNameTextView"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+        <TextView
+            android:id="@+id/enterNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enterNameText"
+            android:textColor="#000000"
+            android:paddingEnd="10dp"
+            android:textSize="18sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="167dp"
+            android:layout_height="41dp"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="@string/usernameHint"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="#8F8F8F" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/startQuizButton"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#8A8A8A"
+        android:onClick="startQuiz"
+        android:text="@string/startQuizText"
+        android:textColor="#000000"
+        app:strokeColor="#000000"
+        app:strokeWidth="2dp" />
+
+</LinearLayout>

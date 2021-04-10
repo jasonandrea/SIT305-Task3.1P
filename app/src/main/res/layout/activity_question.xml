@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".QuestionActivity">
 
     <TextView
@@ -18,34 +20,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/questionProgressText"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="94dp"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
 
-    <ProgressBar
-        android:id="@+id/questionProgressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="295dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="23dp"
-        android:max="5"
-        android:progress="1"
-        android:progressDrawable="@drawable/progress_bar_style"
-        app:layout_constraintStart_toEndOf="@+id/questionProgressText"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeUserTextView" />
+        <TextView
+            android:id="@+id/questionProgressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/questionProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="295dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:max="5"
+            android:progress="1"
+            android:progressDrawable="@drawable/progress_bar_style"
+            app:layout_constraintStart_toEndOf="@+id/questionProgressText"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeUserTextView" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/questionTitleText"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="50dp"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +75,7 @@
         android:id="@+id/answerButton1"
         android:layout_width="220dp"
         android:layout_height="60dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#FFFFFF"
         android:onClick="selectAnswer1"
         android:textColor="#000000"
@@ -80,7 +89,7 @@
         android:id="@+id/answerButton2"
         android:layout_width="220dp"
         android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:backgroundTint="#FFFFFF"
         android:onClick="selectAnswer2"
         android:textColor="#000000"
@@ -94,7 +103,7 @@
         android:id="@+id/answerButton3"
         android:layout_width="220dp"
         android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:backgroundTint="#FFFFFF"
         android:onClick="selectAnswer3"
         android:textColor="#000000"
@@ -108,6 +117,7 @@
         android:id="@+id/submitNextButton"
         android:layout_width="220dp"
         android:layout_height="60dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#8A8A8A"
         android:onClick="submitAnswer"
         android:text="@string/submitText"
@@ -119,4 +129,4 @@
         app:strokeColor="#000000"
         app:strokeWidth="2dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
